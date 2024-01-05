@@ -27,6 +27,7 @@ strokeCap(ROUND);
   background(img);
 
 audio.play();
+getAudioContext().resume();
 
 
 }
