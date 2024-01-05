@@ -45,7 +45,7 @@ getAudioContext().resume();
 
 function draw() {
 
-
+  beginShape();
 
 
       runArrays(array1, timerA1, turnA1, result1);
@@ -59,8 +59,8 @@ function runArrays(arraynum, timer, turn, result){
 
   if (millis() >= 100+timer) {
 
-    beginShape();
     turn++;
+
 
     if (arraynum[turn] == "beginShape();"){
       turn++;
@@ -71,11 +71,11 @@ function runArrays(arraynum, timer, turn, result){
     console.log("result 2 for" +  turn + " is = " + result2);
     result3 = result2.split(",");
     vertex(result3[0], result3[1]);
-    turn++
+    turn++;
 
     if (arraynum[turn] == "endShape()"){
       endShape();
-      turn++
+      turn++;
     }
     else {
       let result = arraynum[turn].replace("vertex(",'');
@@ -83,10 +83,10 @@ function runArrays(arraynum, timer, turn, result){
       console.log("result 2 for" +  turn + " is = " + result2);
       result3 = result2.split(",");
       vertex(result3[0], result3[1]);
-      turn++
+      turn++;
 
       endShape();
-      turn++
+      turn++;
     }
 
     if (arraynum[turn] == "FINAL"){
